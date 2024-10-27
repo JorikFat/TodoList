@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
 //            insets
 //        }
-        val todoAdapter = TodoAdapter({}, {})
+        val todoAdapter = TodoAdapter(viewModel::toggle, {})
         views.list.adapter = todoAdapter
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED){
