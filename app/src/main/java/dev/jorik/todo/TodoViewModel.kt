@@ -22,6 +22,12 @@ class TodoViewModel :ViewModel() {
         }
     }
 
+    fun edit(todo: Todo, name :String){
+        viewModelScope.launch {
+            database.update(Todo(todo.id, name, todo.flag))
+        }
+    }
+
     fun delete(todo :Todo){
         viewModelScope.launch {
             database.delete(todo)
