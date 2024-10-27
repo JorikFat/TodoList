@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         views.add.setOnClickListener {
-            viewModel.add(System.currentTimeMillis().toString())
+            AddDialog(this, viewModel::add).show()
         }
     }
 }
